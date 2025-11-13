@@ -1,28 +1,26 @@
 # Battleship
 
-Command the classic Battleship experience right from your browser. Deploy your fleet, trade volleys with an adaptive computer opponent, and be the first to sink every ship.
+A faithful command-line adaptation of the classic Battleship board game. Deploy your fleet, take aim, and sink the enemy ships before they destroy yours. Play against a computer opponent that hunts intelligently without feeling unbeatable.
 
 ## Features
 
-- Playable entirely in Chrome (or any modern browser) with a responsive layout and keyboard-accessible controls.
-- Manual ship placement with visual feedback, plus a "Randomly Place Fleet" option for quick deployment.
-- Smart-but-fair computer rival that scouts randomly until it finds a hit, then fans out to finish the job.
-- Dynamic battle log, fleet status tracking, and clear indicators for hits, misses, and sunk ships.
+- Standard 10x10 grid with the traditional fleet: Carrier, Battleship, Cruiser, Submarine, and Destroyer.
+- Manual ship placement with validation for overlaps and boundaries, plus an option to deploy the remainder of your fleet automatically.
+- Turn-based play against a computer foe that searches at random until it finds a target, then probes the surrounding waters to finish the job.
+- Clear visual board rendering that shows hits (`X`), misses (`o`), and your own ships (`S`).
 
 ## Requirements
 
-- A modern desktop browser (Chrome, Firefox, or Edge work great).
-- Optional: Python 3.9+ if you'd like to serve the files locally via `http.server`.
+- Python 3.9 or newer (no external dependencies required).
 
 ## Running the game
 
-1. Open `web/index.html` directly in your browser, **or** start a lightweight static server:
+From the project root, launch the game with:
 
-   ```bash
-   cd web
-   python -m http.server 8000
-   ```
+```bash
+python -m battleship.game
+```
 
-2. Visit `http://localhost:8000` in Chrome and follow the on-screen instructions to place your fleet and engage the enemy.
+Follow the on-screen prompts to place your fleet and fire on the enemy. Coordinates use the format `A1` through `J10`, with `H` for horizontal and `V` for vertical placement.
 
-Tip: Use the orientation toggle to switch between horizontal and vertical placement while positioning your ships.
+Good luck, Admiral!
