@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Battleship</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Battleship</h1>
+        <p class="tagline">Deploy your fleet and sink the enemy armada.</p>
+      </header>
+
+      <section class="controls" aria-live="polite">
+        <div class="control-group" data-phase="placement">
+          <h2>Fleet Deployment</h2>
+          <p id="placement-instructions">
+            Select an orientation and click on your grid to place each ship.
+          </p>
+          <div class="buttons">
+            <button id="orientation-toggle" type="button" aria-pressed="false">
+              Orientation: Horizontal
+            </button>
+            <button id="random-placement" type="button">
+              Randomly Place Fleet
+            </button>
+            <button id="start-game" type="button" disabled>
+              Start Battle
+            </button>
+          </div>
+          <ul class="ship-list" id="ship-list" aria-live="polite"></ul>
+        </div>
+        <div class="control-group" data-phase="active">
+          <h2>Battle Log</h2>
+          <div id="message" role="status">Deploy your fleet to begin.</div>
+        </div>
+        <div class="control-group" data-phase="any">
+          <button id="reset-game" type="button">Reset Game</button>
+        </div>
+      </section>
+
+      <section class="boards">
+        <div class="board-container">
+          <h2>Your Fleet</h2>
+          <div class="labels">
+            <div class="corner"></div>
+            <div class="columns" aria-hidden="true"></div>
+            <div class="rows" aria-hidden="true"></div>
+          </div>
+          <div
+            id="player-board"
+            class="board"
+            role="grid"
+            aria-label="Player board"
+          ></div>
+        </div>
+        <div class="board-container">
+          <h2>Enemy Waters</h2>
+          <div class="labels">
+            <div class="corner"></div>
+            <div class="columns" aria-hidden="true"></div>
+            <div class="rows" aria-hidden="true"></div>
+          </div>
+          <div
+            id="computer-board"
+            class="board"
+            role="grid"
+            aria-label="Computer board"
+          ></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
